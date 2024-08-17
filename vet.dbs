@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="PostgreSQL" id="PostgreSQL-14ed" database="PostgreSQL" >
+	<schema name="public" >
+		<comment><![CDATA[standard public schema]]></comment>
+		<table name="cliente" >
+			<column name="id_cliente" type="integer" jt="4" mandatory="y" />
+			<column name="name_cliente" type="varchar" length="100" jt="12" />
+			<column name="lastname_cliente" type="varchar" length="100" jt="12" />
+			<column name="ci_cliente" type="varchar" length="50" jt="12" />
+			<index name="pk_cliente" unique="PRIMARY_KEY" >
+				<column name="id_cliente" />
+			</index>
+			<fk name="fk_cliente_vet" virtual="y" to_schema="public" to_table="vet" />
+		</table>
+		<table name="vet" >
+			<column name="id_vet" type="integer" jt="4" mandatory="y" />
+			<column name="name_vet" type="varchar" length="100" jt="12" />
+			<column name="raza_vet" type="varchar" length="100" jt="12" />
+			<column name="color_vet" type="varchar" length="50" jt="12" />
+			<index name="pk_vet" unique="UNIQUE_KEY" >
+				<column name="id_vet" />
+			</index>
+		</table>
+	</schema>
+	<layout name="Main Layout" id="Layout-1862" show_relation="columns" >
+		<entity schema="public" name="cliente" color="3986C1" x="408" y="255" />
+		<entity schema="public" name="vet" color="C1D8EE" x="816" y="238" />
+		<callout x="51" y="51" pointer="Round" >
+			<comment><![CDATA[This is a layout. Create new tables by right-clicking the layout. 
+
+Edit tables by double-clicking the table header.]]></comment>
+		</callout>
+	</layout>
+</project>
